@@ -29,17 +29,7 @@ const platforms = [
 
 const DownloadSection = () => {
   return (
-    <section id="download" className="relative py-28 px-6 bg-hero hero-gradient overflow-hidden">
-      <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-hero-glow/5 blur-[140px] pointer-events-none"
-        animate={{ x: [0, 50, -30, 0], y: [0, -40, 30, 0], scale: [1, 1.1, 0.9, 1] }}
-        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] rounded-full bg-[hsl(270_80%_60%/0.03)] blur-[100px] pointer-events-none"
-        animate={{ x: [0, -40, 50, 0], y: [0, 30, -40, 0], scale: [1, 0.9, 1.15, 1] }}
-        transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
-      />
+    <section id="download" className="relative py-28 px-6 overflow-hidden">
 
       <div className="relative z-10 mx-auto max-w-4xl text-center">
         <motion.div
