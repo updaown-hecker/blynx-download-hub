@@ -111,8 +111,8 @@ html {
 .hero-gradient {
   background: radial-gradient(
     ellipse 80% 60% at 50% 40%,
-    hsl(var(--hero-glow) / 0.08) 0%,
-    hsl(var(--hero-glow-secondary) / 0.03) 40%,
+    hsl(var(--hero-glow) / 0.06) 0%,
+    hsl(var(--hero-glow-secondary) / 0.025) 40%,
     hsl(var(--hero-bg)) 80%
   );
 }

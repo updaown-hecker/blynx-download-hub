@@ -13,9 +13,22 @@ const platforms = [
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center hero-gradient overflow-hidden">
-      {/* Subtle glow orbs — toned down */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-hero-glow/5 blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 left-1/3 w-[400px] h-[400px] rounded-full bg-[hsl(270_80%_60%/0.04)] blur-[120px] pointer-events-none" />
+      {/* Animated glow orbs */}
+      <motion.div
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-hero-glow/5 blur-[140px] pointer-events-none"
+        animate={{ x: [0, 60, -40, 0], y: [0, -50, 30, 0], scale: [1, 1.15, 0.9, 1] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute bottom-0 left-1/3 w-[400px] h-[400px] rounded-full bg-[hsl(270_80%_60%/0.04)] blur-[120px] pointer-events-none"
+        animate={{ x: [0, -50, 40, 0], y: [0, 40, -30, 0], scale: [1, 0.85, 1.1, 1] }}
+        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute top-1/2 right-1/4 w-[350px] h-[350px] rounded-full bg-hero-glow/3 blur-[100px] pointer-events-none"
+        animate={{ x: [0, 40, -60, 0], y: [0, -60, 20, 0], scale: [1, 1.2, 0.95, 1] }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+      />
 
       <div className="relative z-10 mx-auto max-w-5xl px-6 pt-32 pb-20 text-center">
         <motion.div
