@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Monitor, Apple, Terminal, Download } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const platforms = [
@@ -76,6 +77,22 @@ const DownloadSection = () => {
               </Button>
             </a>
           ))}
+        </motion.div>
+
+        <motion.div
+          className="mt-8 text-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <Link
+            to="/portable"
+            className="inline-flex items-center gap-2 text-sm text-hero-muted hover:text-hero-foreground transition-colors underline underline-offset-4"
+          >
+            <Terminal size={16} />
+            Or build from source (portable)
+          </Link>
         </motion.div>
 
         <p className="mt-10 text-xs text-hero-muted/60">
