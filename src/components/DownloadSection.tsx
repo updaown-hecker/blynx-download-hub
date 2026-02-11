@@ -29,7 +29,7 @@ const platforms = [
 const DownloadSection = () => {
   return (
     <section id="download" className="relative py-28 px-6 bg-hero hero-gradient overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-hero-glow/10 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-hero-glow/5 blur-[140px] pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-4xl text-center">
         <motion.div
