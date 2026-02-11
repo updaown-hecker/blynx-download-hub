@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Monitor, Apple, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+import { Link } from "react-router-dom";
+
 const platforms = [
   { label: "Windows", icon: Monitor, suffix: ".exe" },
   { label: "macOS", icon: Apple, suffix: ".dmg" },
@@ -57,6 +59,17 @@ const HeroSection = () => {
               </a>
             </Button>
           ))}
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="rounded-full border-white/15 bg-white/5 text-hero-foreground hover:bg-white/10 hover:border-white/25 gap-2 px-6"
+          >
+            <Link to="/portable">
+              <Terminal size={18} />
+              Portable
+            </Link>
+          </Button>
         </motion.div>
 
         {/* Browser mockup placeholder */}
