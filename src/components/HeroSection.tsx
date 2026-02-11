@@ -11,9 +11,9 @@ const platforms = [
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center hero-gradient overflow-hidden">
-      {/* Subtle glow orbs */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-hero-glow/10 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-1/3 w-[400px] h-[400px] rounded-full bg-[hsl(270_80%_60%/0.08)] blur-[100px] pointer-events-none" />
+      {/* Subtle glow orbs — toned down */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-hero-glow/5 blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/3 w-[400px] h-[400px] rounded-full bg-[hsl(270_80%_60%/0.04)] blur-[120px] pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-6 pt-32 pb-20 text-center">
         <motion.div

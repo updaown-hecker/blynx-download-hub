@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
+import blynxIcon from "@/assets/blynx-icon.png";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -25,7 +27,8 @@ const Navbar = () => {
       }`}
     >
       <div className="mx-auto max-w-6xl px-6 flex items-center justify-between h-16">
-        <a href="#" className="text-hero-foreground font-bold text-xl tracking-tight">
+        <a href="#" className="flex items-center gap-2 text-hero-foreground font-bold text-xl tracking-tight">
+          <img src={blynxIcon} alt="Blynx" className="w-8 h-8 rounded-full" />
           Blynx
         </a>
 
@@ -40,6 +43,7 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
+          <ThemeToggle />
           <Button asChild size="sm" className="rounded-full px-5">
             <a href="#download">Download</a>
           </Button>
