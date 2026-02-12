@@ -29,11 +29,11 @@ const copyToClipboard = (text: string) => {
 };
 
 const CodeBlock = ({ command }: { command: string }) => (
-  <div className="flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-4 py-3 font-mono text-sm text-hero-foreground">
+  <div className="flex items-center gap-2 rounded-lg bg-white/5 px-4 py-3 font-mono text-sm text-white dark:bg-black/50">
     <code className="flex-1 break-all">{command}</code>
     <button
       onClick={() => copyToClipboard(command)}
-      className="shrink-0 p-1.5 rounded-md hover:bg-white/10 text-hero-muted hover:text-hero-foreground transition-colors"
+      className="shrink-0 p-1.5 rounded-md hover:bg-white/10 text-white/80 hover:text-white transition-colors dark:hover:bg-white/10 dark:text-white/80"
       aria-label="Copy command"
     >
       <Copy size={16} />
@@ -46,7 +46,7 @@ const Portable = () => {
     <div className="min-h-screen">
       <Navbar />
       <section className="relative min-h-screen hero-gradient overflow-hidden pt-32 pb-20 px-6">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-hero-glow/5 blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-hero-glow/5 blur-[140px] pointer-events-none dark:hidden" />
 
         <div className="relative z-10 mx-auto max-w-2xl">
           <motion.div
@@ -55,16 +55,16 @@ const Portable = () => {
             transition={{ duration: 0.6 }}
           >
             <Link to="/">
-              <Button variant="ghost" size="sm" className="text-hero-muted hover:text-hero-foreground mb-8 gap-2">
+              <Button variant="ghost" size="sm" className="text-white/80 hover:text-white/90 mb-8 gap-2">
                 <ArrowLeft size={16} /> Back to home
               </Button>
             </Link>
 
-            <Terminal size={40} className="text-hero-glow mb-6" />
-            <h1 className="text-4xl md:text-5xl font-bold text-hero-foreground tracking-tight">
+            <Terminal size={40} className="text-white/80 mb-6" />
+            <h1 className="text-4xl md:text-5xl font-bold text-white/90 tracking-tight">
               Build from Source
             </h1>
-            <p className="mt-4 text-lg text-hero-muted max-w-xl leading-relaxed">
+            <p className="mt-4 text-lg text-white/80 max-w-xl leading-relaxed">
               Build Blynx Browser yourself for a portable, self-contained version.
             </p>
           </motion.div>
@@ -77,7 +77,7 @@ const Portable = () => {
           >
             {steps.map((step, i) => (
               <div key={i}>
-                <p className="text-sm font-semibold text-hero-foreground mb-2">
+                <p className="text-sm font-semibold text-white/90 mb-2">
                   {i + 1}. {step.label}
                 </p>
                 <CodeBlock command={step.command} />
@@ -85,29 +85,29 @@ const Portable = () => {
             ))}
 
             <div>
-              <p className="text-sm font-semibold text-hero-foreground mb-2">
+              <p className="text-sm font-semibold text-white/90 mb-2">
                 3. Build for your platform
               </p>
               <div className="space-y-3">
                 {buildTargets.map((t) => (
                   <div key={t.label}>
-                    <p className="text-xs text-hero-muted mb-1">{t.label}</p>
+                    <p className="text-xs text-white/60 mb-1">{t.label}</p>
                     <CodeBlock command={t.command} />
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 mt-10">
-              <p className="text-sm font-semibold text-hero-foreground mb-2">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 mt-10 dark:border-black/10 dark:bg-black/50">
+              <p className="text-sm font-semibold text-white/90 mb-2">
                 📁 Output Location
               </p>
-              <p className="text-sm text-hero-muted leading-relaxed">
-                After building, your files will be in <code className="px-1.5 py-0.5 rounded bg-white/10 text-hero-foreground text-xs font-mono">./dist/</code>. You'll find:
+              <p className="text-sm text-white/60 leading-relaxed">
+                After building, your files will be in <code className="px-1.5 py-0.5 rounded bg-white/10 text-white/80 text-xs font-mono dark:bg-white/10 dark:text-white/80">./dist/</code>. You'll find:
               </p>
-              <ul className="mt-3 space-y-1.5 text-sm text-hero-muted list-disc list-inside">
+              <ul className="mt-3 space-y-1.5 text-sm text-white/60 list-disc list-inside">
                 <li>The packaged installer/executable (ready to distribute)</li>
-                <li>An <code className="px-1.5 py-0.5 rounded bg-white/10 text-hero-foreground text-xs font-mono">unpacked</code> folder — a portable version you can run directly without installing</li>
+                <li>An <code className="px-1.5 py-0.5 rounded bg-white/10 text-white/80 text-xs font-mono dark:bg-white/10 dark:text-white/80">unpacked</code> folder — a portable version you can run directly without installing</li>
               </ul>
             </div>
           </motion.div>

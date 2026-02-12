@@ -45,7 +45,7 @@ const fadeUp = {
 
 const FeaturesSection = () => {
   return (
-    <section id="features" className="py-28 px-6 bg-background">
+    <section id="features" className="py-28 px-6 bg-background/55 backdrop-blur-md">
       <div className="mx-auto max-w-6xl">
         <motion.div
           className="text-center mb-16"

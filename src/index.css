@@ -37,9 +37,9 @@
     --radius: 0.75rem;
 
     /* Blynx custom tokens */
-    --hero-bg: 225 30% 6%;
-    --hero-foreground: 0 0% 98%;
-    --hero-muted: 220 15% 55%;
+    --hero-bg: 0 0% 100%;
+    --hero-foreground: 220 20% 10%;
+    --hero-muted: 220 10% 46%;
     --hero-glow: 220 90% 56%;
     --hero-glow-secondary: 270 80% 60%;
     --surface-elevated: 0 0% 100%;
@@ -75,6 +75,9 @@
     --border: 225 20% 18%;
     --input: 225 20% 18%;
     --ring: 220 90% 56%;
+
+    /* Blynx custom tokens */
+    --hero-bg: 225 30% 6%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

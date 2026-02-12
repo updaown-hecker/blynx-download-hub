@@ -23,7 +23,7 @@ const HeroSection = () => {
           <p className="text-hero-glow text-sm font-semibold tracking-widest uppercase mb-4">
             Introducing Blynx Browser
           </p>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-hero-foreground tracking-tight leading-[1.05] text-balance">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground dark:text-white tracking-tight leading-[1.05] text-balance">
             Browse the web,
             <br />
             <span className="bg-gradient-to-r from-hero-glow to-[hsl(270,80%,65%)] bg-clip-text text-transparent">
@@ -48,11 +48,11 @@ const HeroSection = () => {
               asChild
               variant="outline"
               size="lg"
-              className="rounded-full border-white/15 bg-white/5 text-hero-foreground hover:bg-white/10 hover:border-white/25 gap-2 px-6"
+              className="rounded-full border-border bg-background/60 text-foreground hover:bg-accent gap-2 px-6 dark:border-white/25 dark:bg-white/20 dark:text-hero-foreground/90 dark:hover:bg-white/15 dark:hover:border-white/35"
             >
               <a href="#download">
-                <p.icon size={18} />
-                {p.label}
+                <p.icon size={18} className="text-foreground dark:text-white" />
+                <span className="text-foreground dark:text-white">{p.label}</span>
               </a>
             </Button>
           ))}
@@ -60,11 +60,11 @@ const HeroSection = () => {
             asChild
             variant="outline"
             size="lg"
-            className="rounded-full border-white/15 bg-white/5 text-hero-foreground hover:bg-white/10 hover:border-white/25 gap-2 px-6"
+            className="rounded-full border-border bg-background/60 text-foreground hover:bg-accent gap-2 px-6 dark:border-white/25 dark:bg-white/20 dark:text-hero-foreground/90 dark:hover:bg-white/15 dark:hover:border-white/35"
           >
             <Link to="/portable">
-              <Terminal size={18} />
-              Portable
+              <Terminal size={18} className="text-foreground dark:text-white" />
+              <span className="text-foreground dark:text-white">Portable</span>
             </Link>
           </Button>
         </motion.div>
