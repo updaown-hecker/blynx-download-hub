@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { Monitor, Apple, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 import { Link } from "react-router-dom";
+import newTabImg from "@/assets/new-tab.png";
 
 const platforms = [
   { label: "Windows", icon: Monitor, suffix: ".exe" },
@@ -11,6 +13,8 @@ const platforms = [
 ];
 
 const HeroSection = () => {
+  const [showScreenshot, setShowScreenshot] = useState(true);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
@@ -91,11 +95,24 @@ const HeroSection = () => {
               </div>
             </div>
             {/* Content area */}
-            <div className="aspect-[16/9] flex items-center justify-center bg-gradient-to-b from-white/[0.03] to-transparent">
-              <div className="text-center space-y-3">
-                <p className="text-3xl font-bold text-hero-foreground/80">Blynx</p>
-                <p className="text-sm text-hero-muted">Your browser screenshot will appear here</p>
-              </div>
+            <div className="relative aspect-[16/9] overflow-hidden bg-gradient-to-b from-white/[0.03] to-transparent">
+              {showScreenshot && (
+                <img
+                  src={newTabImg}
+                  alt="Blynx new tab"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  loading="lazy"
+                  onError={() => setShowScreenshot(false)}
+                />
+              )}
+              {!showScreenshot && (
+                <div className="relative z-10 flex h-full w-full items-center justify-center px-6">
+                  <div className="text-center space-y-3">
+                    <p className="text-3xl font-bold text-hero-foreground/80">Blynx</p>
+                    <p className="text-sm text-hero-muted">Your browser screenshot will appear here</p>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </motion.div>

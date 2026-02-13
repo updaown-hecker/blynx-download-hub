@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
+
+import showcaseVideo from "@/assets/showcase.mp4";
 
 const ScreenshotSection = () => {
+  const [showVideo, setShowVideo] = useState(true);
+
   return (
     <section id="screenshots" className="py-28 px-6 bg-muted/50">
       <div className="mx-auto max-w-6xl">
@@ -39,11 +44,27 @@ const ScreenshotSection = () => {
               </div>
             </div>
             {/* Placeholder for screenshot */}
-            <div className="aspect-[16/9] bg-gradient-to-br from-muted to-background flex items-center justify-center">
-              <div className="text-center space-y-2">
-                <p className="text-2xl font-semibold text-foreground/60">Browser Screenshot</p>
-                <p className="text-sm text-muted-foreground">Upload your Blynx screenshot to showcase here</p>
-              </div>
+            <div className="relative aspect-[16/9] overflow-hidden bg-gradient-to-br from-muted to-background">
+              {showVideo && (
+                <video
+                  className="absolute inset-0 h-full w-full object-cover"
+                  src={showcaseVideo}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  onError={() => setShowVideo(false)}
+                />
+              )}
+
+              {!showVideo && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center space-y-2">
+                    <p className="text-2xl font-semibold text-foreground/60">Showcase video</p>
+                    <p className="text-sm text-muted-foreground">Video failed to load.</p>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </motion.div>

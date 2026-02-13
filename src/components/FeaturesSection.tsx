@@ -5,12 +5,12 @@ const features = [
   {
     icon: Layers,
     title: "Tab Management",
-    description: "Organize your browsing with intuitive tab groups, pinning, and quick switching.",
+    description: "Organize your browsing with intuitive tab groups, pinning, and quick switching. (A bit buggy)",
   },
   {
     icon: ShieldCheck,
     title: "Built-in Ad Blocker",
-    description: "Browse cleaner and faster with a powerful ad blocker enabled by default.",
+    description: "Browse cleaner and faster with a powerful ad blocker enabled by default. (WIP)",
   },
   {
     icon: Link,
@@ -20,17 +20,17 @@ const features = [
   {
     icon: Puzzle,
     title: "Extension Support",
-    description: "Enhance your browser with extensions and customize it to fit your workflow.",
+    description: "Enhance your browser with extensions and customize it to fit your workflow. (You can install extensions and half the time they work)",
   },
   {
     icon: SunMoon,
     title: "Dark & Light Mode",
-    description: "Switch between themes or let the browser match your system preference automatically.",
+    description: "Switch between themes or let the browser match your system preference automatically. (Doesn't work idkw)",
   },
   {
     icon: Keyboard,
     title: "Keyboard Shortcuts",
-    description: "Power-user shortcuts for navigation, tabs, and everything in between.",
+    description: "Power-user shortcuts for navigation, tabs, and everything in between. (This one actually does work)",
   },
 ];
 
