@@ -10,6 +10,7 @@ import CursorDemo from "./pages/CursorDemo";
 import Win from "./pages/downloads/Win";
 import Mac from "./pages/downloads/Mac";
 import Linux from "./pages/downloads/Linux";
+import Android from "./pages/downloads/Android";
 import { Cursor } from "@/components/ui/inverted-cursor";
 import { InteractiveNebulaShader } from "@/components/liquid-shader";
 
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/downloads/win" element={<Win />} />
           <Route path="/downloads/mac" element={<Mac />} />
           <Route path="/downloads/linux" element={<Linux />} />
+          <Route path="/downloads/android" element={<Android />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

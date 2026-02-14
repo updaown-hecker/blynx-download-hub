@@ -9,6 +9,8 @@ type DownloadState = "idle" | "verifying" | "started";
 interface DownloadNowProps {
   installerUrl?: string;
   portableUrl?: string;
+  installerLabel?: string;
+  portableLabel?: string;
   installerSize?: string;
   portableZipSize?: string;
   portableUnzippedSize?: string;
@@ -17,6 +19,8 @@ interface DownloadNowProps {
 const DownloadNow = ({
   installerUrl,
   portableUrl,
+  installerLabel = "Installer",
+  portableLabel = "Portable",
   installerSize,
   portableZipSize,
   portableUnzippedSize,
@@ -106,7 +110,7 @@ const DownloadNow = ({
             className={variant === "installer" ? "" : "bg-background/60"}
             onClick={() => setVariant("installer")}
           >
-            Installer
+            {installerLabel}
           </Button>
           <Button
             type="button"
@@ -114,7 +118,7 @@ const DownloadNow = ({
             className={variant === "portable" ? "" : "bg-background/60"}
             onClick={() => setVariant("portable")}
           >
-            Portable
+            {portableLabel}
           </Button>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Monitor, Apple, Terminal } from "lucide-react";
+import { Monitor, Apple, Terminal, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
@@ -10,6 +10,7 @@ const platforms = [
   { label: "Windows", icon: Monitor, suffix: ".exe" },
   { label: "macOS", icon: Apple, suffix: ".dmg" },
   { label: "Linux", icon: Terminal, suffix: ".AppImage" },
+  { label: "Android", icon: Smartphone, suffix: ".apk" },
 ];
 
 const HeroSection = () => {
@@ -54,7 +55,7 @@ const HeroSection = () => {
               size="lg"
               className="rounded-full border-border bg-background/60 text-foreground hover:bg-accent gap-2 px-6 dark:border-white/25 dark:bg-white/20 dark:text-hero-foreground/90 dark:hover:bg-white/15 dark:hover:border-white/35"
             >
-              <a href="#download">
+              <a href={p.label === "Android" ? "/downloads/android" : "#download"}>
                 <p.icon size={18} className="text-foreground dark:text-white" />
                 <span className="text-foreground dark:text-white">{p.label}</span>
               </a>

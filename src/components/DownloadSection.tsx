@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Monitor, Apple, Terminal, Download } from "lucide-react";
+import { Monitor, Apple, Terminal, Download, Smartphone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -10,6 +10,14 @@ const platforms = [
     suffix: ".exe",
     url: "/downloads/win",
     note: "Windows 10+",
+    comingSoon: false,
+  },
+  {
+    label: "Android",
+    icon: Smartphone,
+    suffix: ".apk",
+    url: "/downloads/android",
+    note: "Android 9+",
     comingSoon: false,
   },
   {
@@ -54,7 +62,7 @@ const DownloadSection = () => {
         </motion.div>
 
         <motion.div
-          className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-5"
+          className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
